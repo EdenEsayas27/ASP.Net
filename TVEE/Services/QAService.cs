@@ -65,7 +65,7 @@ namespace Tvee.Services
             var result = await _questions.UpdateOneAsync(filter, update);
 
             if (result.ModifiedCount == 0)
-                return null; // Question not found or unauthorized
+                return null; // Return null if the question was not found or the user is unauthorized
 
             return await _questions.Find(filter).FirstOrDefaultAsync();
         }
@@ -76,10 +76,10 @@ namespace Tvee.Services
             var filter = Builders<Question>.Filter.And(
                 Builders<Question>.Filter.Eq(q => q.Id, questionId),
                 Builders<Question>.Filter.Eq(q => q.UserId, userId)
-            );
+            ); // Ensure only the owner can delete
 
             var result = await _questions.DeleteOneAsync(filter);
-            return result.DeletedCount > 0;
+            return result.DeletedCount > 0; // Return true if a document was deleted
         }
     }
 }
