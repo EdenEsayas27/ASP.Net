@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Elective\\ASP.Net\\TVEE\\TVEE.csproj": {}
+    "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Elective\\ASP.Net\\TVEE\\TVEE.csproj": {
+    "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Elective\\ASP.Net\\TVEE\\TVEE.csproj",
+        "projectUniqueName": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj",
         "projectName": "TVEE",
-        "projectPath": "C:\\Users\\User\\Desktop\\Elective\\ASP.Net\\TVEE\\TVEE.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Elective\\ASP.Net\\TVEE\\obj\\",
+        "projectPath": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj",
+        "packagesPath": "C:\\Users\\Nafkot\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Nafkot\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,7 +32,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -65,7 +71,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.136\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
