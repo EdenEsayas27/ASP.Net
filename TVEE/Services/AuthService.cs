@@ -26,7 +26,7 @@ namespace Tvee.Services
         public async Task<string?> Login(LoginDTO loginDTO)
         {
             var user = await _users.Find(u => u.Username == loginDTO.Username).FirstOrDefaultAsync();
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.PasswordHash))
+            if (user == null  !BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.PasswordHash))
             {
                 return null; // Invalid credentials
             }
@@ -64,9 +64,34 @@ namespace Tvee.Services
             return user; // Return the user or null if not found
         }
 
-               private string GenerateJwtToken(User user)
+        // ✅ Update user profile
+        public async Task<User?> UpdateUserProfile(string userId, UpdateUserDTO updateDTO)
+        {
+            var user = await _users.Find(u => u.Id == userId).FirstOrDefaultAsync();
+            if (user == null  !BCrypt.Net.BCrypt.Verify(updateDTO.OldPassword, user.PasswordHash))
+            {
+                return null; // User not found or old password incorrect
+            }
+
+            var update = Builders<User>.Update
+                .Set(u => u.Username, updateDTO.Username)
+                .Set(u => u.PasswordHash, BCrypt.Net.BCrypt.HashPassword(updateDTO.NewPassword));
+
+            await _users.UpdateOneAsync(u => u.Id == userId, update);
+            return await GetUserProfile(userId);
+        }
+
+        // ✅ Delete user profile
+        public async Task<bool> DeleteUserProfile(string userId)
+        {
+            var result = await _users.DeleteOneAsync(u => u.Id == userId);
+            return result.DeletedCount > 0;
+        }
+
+        // ✅ Generate JWT Token
+        private string GenerateJwtToken(User user)
 {
-    if (user.Id == null || user.Username == null || user.Role == null)
+    if (user.Id == null  user.Username == null  user.Role == null)
     {
         throw new ArgumentNullException("User ID, Username, or Role is null");
     }
@@ -87,8 +112,7 @@ namespace Tvee.Services
         claims,
         expires: DateTime.UtcNow.AddHours(2),
         signingCredentials: creds);
-
-    return new JwtSecurityTokenHandler().WriteToken(token);
+        return new JwtSecurityTokenHandler().WriteToken(token);
 }
     }
 }
