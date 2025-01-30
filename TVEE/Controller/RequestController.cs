@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tvee.Services;
@@ -13,7 +14,7 @@ namespace Tvee.Controllers
     public class RequestController : ControllerBase
     {
         private readonly RequestService _requestService;
-        
+        private readonly IUserService _userService;
 
         // Constructor to inject services
         public RequestController(RequestService requestService, IUserService userService)
@@ -64,7 +65,7 @@ namespace Tvee.Controllers
             }
 
             // Validate that the teacherId from the token matches the provided teacherId
-            
+            var teacherIdFromToken = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (teacherIdFromToken == null)
             {
                 return Unauthorized("Invalid token.");
@@ -76,28 +77,28 @@ namespace Tvee.Controllers
                 return Unauthorized("You do not have access to this teacher's requests.");
             }
 
-          
+            var requests = await _requestService.GetRequestsForTeacher(teacherId);
             return Ok(requests);
         }
 
-    //     [Authorize(Roles = "Teacher")]
-    //     [HttpPost("read/{requestId}")]
-    //     public async Task<IActionResult> MarkRequestAsRead([FromRoute] string requestId)
-    //     {
-    //         // Log the requestId for debugging
-    //         Console.WriteLine($"Request ID: {requestId}");
+        //     [Authorize(Roles = "Teacher")]
+        //     [HttpPost("read/{requestId}")]
+        //     public async Task<IActionResult> MarkRequestAsRead([FromRoute] string requestId)
+        //     {
+        //         // Log the requestId for debugging
+        //         Console.WriteLine($"Request ID: {requestId}");
 
-    //         var teacherIdFromToken = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //         if (teacherIdFromToken == null)
-    //         {
-    //             return Unauthorized("Invalid token.");
-    //         }
+        //         var teacherIdFromToken = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        //         if (teacherIdFromToken == null)
+        //         {
+        //             return Unauthorized("Invalid token.");
+        //         }
 
-    //         // Call service to mark the request as read
-    //         await _requestService.MarkRequestAsRead(requestId);
-    //         return Ok("Request marked as read.");
-    //     }
-     }
+        //         // Call service to mark the request as read
+        //         await _requestService.MarkRequestAsRead(requestId);
+        //         return Ok("Request marked as read.");
+        //     }
+    }
 
     // DTO for sending requests
     public class SendRequestDTO
@@ -108,6 +109,7 @@ namespace Tvee.Controllers
         [Required]
         [StringLength(100)]
         public string Title { get; set; }  // Title of the request
+
 
         [Required]
         public string Description { get; set; }  // Description of the request
