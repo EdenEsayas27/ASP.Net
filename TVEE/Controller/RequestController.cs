@@ -13,7 +13,7 @@ namespace Tvee.Controllers
     public class RequestController : ControllerBase
     {
         private readonly RequestService _requestService;
-        private readonly IUserService _userService;
+        
 
         // Constructor to inject services
         public RequestController(RequestService requestService, IUserService userService)
@@ -64,7 +64,7 @@ namespace Tvee.Controllers
             }
 
             // Validate that the teacherId from the token matches the provided teacherId
-            var teacherIdFromToken = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            
             if (teacherIdFromToken == null)
             {
                 return Unauthorized("Invalid token.");
@@ -76,7 +76,7 @@ namespace Tvee.Controllers
                 return Unauthorized("You do not have access to this teacher's requests.");
             }
 
-            var requests = await _requestService.GetRequestsForTeacher(teacherId);
+          
             return Ok(requests);
         }
 
