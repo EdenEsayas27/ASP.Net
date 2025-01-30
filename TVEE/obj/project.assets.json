@@ -1280,19 +1280,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nafkot\\.nuget\\packages\\": {}
+    "C:\\Users\\hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\TVEE.csproj",
       "projectName": "TVEE",
-      "projectPath": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj",
-      "packagesPath": "C:\\Users\\Nafkot\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\obj\\",
+      "projectPath": "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\TVEE.csproj",
+      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nafkot\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1310,13 +1310,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net6.0": {
@@ -1362,7 +1356,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -1371,7 +1365,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "TVEE depends on Microsoft.AspNetCore.OpenApi (>= 6.0.0) but Microsoft.AspNetCore.OpenApi 6.0.0 was not found. Microsoft.AspNetCore.OpenApi 7.0.0 was resolved instead.",
+      "message": "TVEE depends on Microsoft.AspNetCore.OpenApi (>= 6.0.0) but Microsoft.AspNetCore.OpenApi 6.0.0 was not found. An approximate best match of Microsoft.AspNetCore.OpenApi 7.0.0 was resolved.",
       "libraryId": "Microsoft.AspNetCore.OpenApi",
       "targetGraphs": [
         "net6.0"

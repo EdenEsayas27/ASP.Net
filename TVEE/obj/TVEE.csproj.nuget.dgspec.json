@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj": {}
+    "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\TVEE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj": {
+    "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\TVEE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\TVEE.csproj",
         "projectName": "TVEE",
-        "projectPath": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\TVEE.csproj",
-        "packagesPath": "C:\\Users\\Nafkot\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nafkot\\Desktop\\assi\\ASP.Net\\TVEE\\obj\\",
+        "projectPath": "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\TVEE.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\Elec\\ASP.Net\\TVEE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nafkot\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,13 +32,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net6.0": {
@@ -84,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.428\\RuntimeIdentifierGraph.json"
         }
       }
     }
